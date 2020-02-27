@@ -23,7 +23,7 @@ func main() {
 		v = v[1:]
 	}
 
-	projectName := strings.Split(reverse(v), "/")[0]
+	projectName := reverse(strings.Split(v, "/")[0])
 
 	err = exec.Command("git", "remote", "add", "origin", fmt.Sprintf("git@github.com:kandros/%s.git", strings.Trim(projectName, " \r\n"))).Run()
 	if err != nil {
